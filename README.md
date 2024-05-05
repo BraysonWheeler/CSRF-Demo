@@ -4,7 +4,7 @@
 2. fastapi dev main.py
 
 ## Testing
-You can use profile.html to view your email. malicous.html is intended to be the phishing site used to trick a user into clicking a form and changing their email. Default setup for form based csrf attacks. Uncomment the fetch() and the app.options for the vulnerable api in main.py to use fetch based csrf.
+You can use profile.html to view your email. malicous.html is intended to be the phishing site used to trick a user into clicking a form and changing their email. Default setup for form based csrf attacks. Uncomment fetch() in malicious.html and app.options for the vulnerable api in main.py to use fetch based csrf.
 
 For normal user flow -> http://127.0.0.1:8000/profile
 
