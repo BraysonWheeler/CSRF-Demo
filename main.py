@@ -6,14 +6,6 @@ from jwt_utility import generate_jwt
 from jwt_utility import validate_jwt
 from jwt_utility import get_jwt_id
 
-class VulnerableBody(BaseModel):
-    id:str
-    email:str
-
-class SafeBody(BaseModel):
-    csrfToken:str
-    id:str
-    email:str
 
 class GenerateCSRFBody(BaseModel):
     id:str
@@ -43,7 +35,7 @@ async def account_email(request:Request, response:Response):
 
 # Generate CSRF Token and store in CSRF Tracker
 @app.post("/generate-csrf")
-async def create_item(generateCSRFBody: GenerateCSRFBody):
+async def generate_csrf(generateCSRFBody: GenerateCSRFBody):
     csrfToken = uuid4()
     csrfTracker[generateCSRFBody.id] = {"csrfToken":str(csrfToken)}
     return({"csrfToken":str(csrfToken)})
@@ -92,7 +84,7 @@ async def change_email_vulnerable(request:Request, response:Response):
 
 
 @app.post("/profile/change-email-safe")
-async def create_item(request:Request, response: Response):
+async def change_email_safe(request:Request, response: Response):
 
     if (request.headers['content-type'] == 'application/x-www-form-urlencoded'):
         body = await request.body()
