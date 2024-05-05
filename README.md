@@ -12,7 +12,7 @@ if a victim where to click on this link their saved cookies would be automaticla
 
 ## Fixes
 - Use csrf tokens saved in the DOM validated by the server.
-- don't set cookies with `same-site:"none"`
+- Don't set cookies with `same-site:"none"`
 
 ## Testing
 You can use profile.html to view your email. malicous.html is intended to be the phishing site used to trick a user into clicking a form and changing their email. Default setup for form based csrf attacks. Uncomment fetch() in malicious.html and app.options for the vulnerable api in main.py to use fetch based csrf.
