@@ -3,6 +3,13 @@
 1. pip install -r requirement.txt
 2. fastapi dev main.py
 
+# What is CSRF 
+Cross Site Request Forgery - An attack where a victim is tricked into clicking on a link that ends up performing an action on their behalf.
+
+Example - bank.com/submit?payment=100&to=attackerId
+
+if a victim where to click on this link their saved cookies would be automaticlaly inserted into the request by the browser performing the action with the identity of the victim.
+
 ## Testing
 You can use profile.html to view your email. malicous.html is intended to be the phishing site used to trick a user into clicking a form and changing their email. Default setup for form based csrf attacks. Uncomment fetch() in malicious.html and app.options for the vulnerable api in main.py to use fetch based csrf.
 
