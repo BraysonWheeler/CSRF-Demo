@@ -10,7 +10,7 @@ For normal user flow -> http://127.0.0.1:8000/profile
 For victim flow -> open malicious.html in browser.
 
 ## CSRF Token Flow
-
+![Image](https://github.com/BraysonWheeler/CSRF-Demo/blob/main/csrf_token_flow.png)
 1. profile.html (http://127.0.0.1:8000/profile) requests a CSRF token.
 2. CSRF token is loaded in javascript NOT saved in browser storage or cookies
 3. profile.html requests JWT for user
