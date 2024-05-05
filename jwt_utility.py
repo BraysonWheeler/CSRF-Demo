@@ -4,7 +4,7 @@ secret = "secret123"
 algo = "HS256"
 
 def generate_jwt():
-   return (jwt.encode({"id": "1"}, "secret123", algorithm=algo))
+   return (jwt.encode({"id": "1"}, secret, algorithm=algo))
 
 def validate_jwt(_jwt):
     try:
